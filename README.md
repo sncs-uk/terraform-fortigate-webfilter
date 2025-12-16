@@ -1,37 +1,21 @@
-# Example Terraform module
-
-Terraform module which is an example.
-
-
-## Usage
-```hcl
-module "example" {
-  source        = "github.com/sncs-uk/example-module"
-  parameter     = "value"
-  do_something  = true
-}
-```
-
-## Requirements
-| Name | Version |
-|------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
-| <a name="requirement_example"></a> [example](#requirement\_example) | >= 1.23 |
-
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_example"></a> [example](#provider\_example) | >= 1.23 |
-
 <!-- BEGIN_TF_DOCS -->
+# Fortigate Webfilter configuration module
+
+This terraform module configures webfilters, zones & hardware
+switches on a firewall
+
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.13.0 |
+| <a name="requirement_fortios"></a> [fortios](#requirement\_fortios) | >= 1.22.0 |
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_fortios"></a> [fortios](#provider\_fortios) | >= 1.22.0 |
 
 ## Modules
 
@@ -39,11 +23,17 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [fortios_webfilter_profile.profiles](https://registry.terraform.io/providers/fortinetdev/fortios/latest/docs/resources/webfilter_profile) | resource |
+| [fortios_webfilter_urlfilter.filters](https://registry.terraform.io/providers/fortinetdev/fortios/latest/docs/resources/webfilter_urlfilter) | resource |
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_config_path"></a> [config\_path](#input\_config\_path) | Path to base configuration directory | `string` | n/a | yes |
+| <a name="input_vdoms"></a> [vdoms](#input\_vdoms) | List of VDOMs from which to pull in configuration | `list(string)` | `[]` | no |
 
 ## Outputs
 
