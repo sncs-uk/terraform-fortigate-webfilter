@@ -5,7 +5,7 @@
  * switches on a firewall
  */
 terraform {
-  required_version = ">= 1.13.0"
+  required_version = ">= 1.11.0"
   required_providers {
     fortios = {
       source  = "fortinetdev/fortios"
